@@ -1,0 +1,347 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all .2s ease-in-out;
+
+  word-wrap: break-word;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  
+  .header-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+
+    @media (min-width: 500px) { 
+      height: 500px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .logo {
+      width: 200px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+
+      a {
+        display: block
+      }
+    }
+  }
+
+
+  nav {
+    background-color: #548135;
+
+    ul {
+      display: flex;
+      gap: .5rem;
+      flex-direction: column;
+
+
+      @media (min-width: 740px) {
+        place-content: center;
+        align-items: center;
+        list-style-type: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      li {
+        width: fit-content;
+        height: 100%;
+        color: white;
+
+        &:hover {
+          background-color: darken(#548135, 5%);
+        }
+
+        a {
+          font-size: 1.2rem;
+          color: white;
+          display: block;
+          padding: 1.2rem;
+        }
+      }
+    }
+
+    .dropdown {
+      z-index: 10;
+      position: relative;
+      font-size: 1.2rem;
+      cursor: default;
+      
+      &-item {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+      }
+
+      &-content {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        background-color: #44682d;
+        width: 100%;
+
+        @media (min-width: 740px) {
+          position: absolute;
+          display: none;
+          background-color: #548135;
+          padding-left:0;
+        }
+
+        li {
+          padding-left: 20px;
+          width: 100%;
+        }
+      }
+
+      &:hover  .dropdown-content {
+        display: block;
+      }
+    }
+  }
+}
+
+.block {
+  position: relative;
+
+  &:first-child {
+    margin-top: 40px;
+  }
+  margin: 120px 0;
+
+  h1, h2 {
+    color: #548135;
+    font-weight: 500;
+  }
+
+  h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: #548135;
+      height: 5px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.3rem;
+
+    &.center {
+      text-align: center;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: disc;
+  }
+
+  li {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+
+  button {
+    padding: 1rem;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 16px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #548135;
+    font-size: 1rem;
+    color: white;
+    width: 240px;
+
+    &:hover {
+      background-color: darken(#548135, 15%);
+    }
+  }
+
+  article {
+    margin: 2rem 0;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .main-image {
+    margin-top: 2rem;
+    display: flex;
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+  }  
+
+  .num-list {
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    grid-column: span 1;
+
+    @media (min-width: 500px) {
+      grid-column: span 2;
+    }
+    
+    p {
+      margin: 0;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 4rem;
+      color: darken(#548135, 10%);
+
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+
+    h1 {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      a {
+        display: block;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, p, article {
+    display: block;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.block.reverse {
+  background-color: #548135 ;
+  color: white;
+  padding: 2rem 1rem; 
+  width: fit-content;
+  margin: 4rem auto;
+  border-radius: 24px;
+
+  h1 {
+    color: white;
+    width: 50%;
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  button {
+    background-color: white;
+    color: #548135;
+
+    &:hover {
+      background-color: #3e6127;
+      color: white;
+      box-shadow: 0 0 0 2px white;
+    }
+  }
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1 {
+    grid-column: 1/-1;
+  }
+
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  
+}
+
+.footer {
+  padding: 1.2rem;
+  width: 100%;
+  background-color: lightgray;
+}

@@ -1,0 +1,309 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all 0.2s ease-in-out;
+  word-wrap: break-word;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.header .header-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+@media (min-width: 500px) {
+  .header .header-image {
+    height: 500px;
+  }
+}
+.header .header-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header .header-image .logo {
+  width: 200px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.header .header-image .logo a {
+  display: block;
+}
+.header nav {
+  background-color: #548135;
+}
+.header nav ul {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+@media (min-width: 740px) {
+  .header nav ul {
+    place-content: center;
+    align-items: center;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+.header nav ul li {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  color: white;
+}
+.header nav ul li:hover {
+  background-color: #486f2e;
+}
+.header nav ul li a {
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+  padding: 1.2rem;
+}
+.header nav .dropdown {
+  z-index: 10;
+  position: relative;
+  font-size: 1.2rem;
+  cursor: default;
+}
+.header nav .dropdown-item {
+  padding: 1.2rem;
+  font-size: 1.2rem;
+}
+.header nav .dropdown-content {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  background-color: #44682d;
+  width: 100%;
+}
+@media (min-width: 740px) {
+  .header nav .dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #548135;
+    padding-left: 0;
+  }
+}
+.header nav .dropdown-content li {
+  padding-left: 20px;
+  width: 100%;
+}
+.header nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.block {
+  position: relative;
+  margin: 120px 0;
+}
+.block:first-child {
+  margin-top: 40px;
+}
+.block h1, .block h2 {
+  color: #548135;
+  font-weight: 500;
+}
+.block h1 {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+}
+.block h1::after {
+  position: absolute;
+  content: "";
+  background-color: #548135;
+  height: 5px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.block h2 {
+  font-size: 2rem;
+  margin-bottom: 1.3rem;
+}
+.block h2.center {
+  text-align: center;
+}
+.block p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.block ul {
+  list-style: disc;
+}
+.block li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.block button {
+  padding: 1rem;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #548135;
+  font-size: 1rem;
+  color: white;
+  width: 240px;
+}
+.block button:hover {
+  background-color: #314b1f;
+}
+.block article {
+  margin: 2rem 0;
+}
+.block .center {
+  text-align: center;
+}
+.block .main-image {
+  margin-top: 2rem;
+  display: flex;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+}
+.block .num-list {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  grid-column: span 1;
+}
+@media (min-width: 500px) {
+  .block .num-list {
+    grid-column: span 2;
+  }
+}
+.block .num-list p {
+  margin: 0;
+  max-width: 300px;
+  text-align: center;
+}
+.block .num-list span {
+  font-weight: 700;
+  font-size: 4rem;
+  color: #3c5d26;
+}
+.block .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+.block .grid h1 {
+  grid-column: 1/-1;
+}
+@media (min-width: 500px) {
+  .block .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .block .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.block .grid .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.block .grid .card a {
+  display: block;
+}
+.block .grid .card h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.block h1, .block h2, .block h3, .block h4, .block h5, .block p, .block article {
+  display: block;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block.reverse {
+  background-color: #548135;
+  color: white;
+  padding: 2rem 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 4rem auto;
+  border-radius: 24px;
+}
+.block.reverse h1 {
+  color: white;
+  width: 50%;
+}
+.block.reverse h1::after {
+  background-color: white;
+}
+.block.reverse button {
+  background-color: white;
+  color: #548135;
+}
+.block.reverse button:hover {
+  background-color: #3e6127;
+  color: white;
+  box-shadow: 0 0 0 2px white;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.split h1 {
+  grid-column: 1/-1;
+}
+@media (min-width: 500px) {
+  .split {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.footer {
+  padding: 1.2rem;
+  width: 100%;
+  background-color: lightgray;
+}/*# sourceMappingURL=index.css.map */
