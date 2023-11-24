@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
   transition: all 0.2s ease-in-out;
-  word-wrap: break-word;
+  word-wrap: normal;
 }
 
 html {
@@ -138,12 +138,17 @@ a {
 .block h1 {
   grid-column: 1/-1;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   display: block;
   width: 100%;
   padding: 1rem;
   position: relative;
+}
+@media (min-width: 500px) {
+  .block h1 {
+    font-size: 3rem;
+  }
 }
 .block h1::after {
   position: absolute;
@@ -155,8 +160,13 @@ a {
   bottom: 0;
 }
 .block h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.3rem;
+}
+@media (min-width: 500px) {
+  .block h2 {
+    font-size: 2rem;
+  }
 }
 .block h2.center {
   text-align: center;
@@ -270,7 +280,8 @@ a {
 }
 .block.reverse h1 {
   color: white;
-  width: 50%;
+  width: 70%;
+  margin: 0 auto 1rem;
 }
 .block.reverse h1::after {
   background-color: white;
