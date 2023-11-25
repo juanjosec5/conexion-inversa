@@ -247,7 +247,7 @@ a {
     display: flex;
     place-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     grid-column: span 1;
     padding: 1rem;
     border-radius: 16px;
@@ -263,10 +263,8 @@ a {
     }
 
     span {
-      font-weight: 700;
-      font-size: 4rem;
-      color: darken(#548135, 10%);
 
+      width: 50px;
     }
   }
 
@@ -294,6 +292,15 @@ a {
       
       a {
         display: block;
+        position: relative;
+
+        .play-icon {
+          position: absolute;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          width: 50px;
+          height: 50px;
+        }
       }
 
       h3 {
