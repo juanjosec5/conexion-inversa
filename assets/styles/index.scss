@@ -39,6 +39,28 @@ a {
   display: flex;
   flex-direction: column;
 
+  .login {
+    display: flex;
+    background-color: darken(#5DA9AD, 20%);
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#5DA9AD, 30%);
+    }
+
+    span {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+  }
+
 
   @media (min-width: 740px) {
     position: sticky;
@@ -157,7 +179,7 @@ a {
   margin: 0 auto 120px;
 
   h1, h2 {
-    color: #5DA9AD;
+    color: darken(#488386, 10%);
     font-weight: 500;
   }
 
@@ -178,7 +200,7 @@ a {
     &::after {
       position: absolute;
       content: '';
-      background-color: #5DA9AD;
+      background-color: darken(#488386, 10%);
       height: 5px;
       width: 100%;
       left: 0;

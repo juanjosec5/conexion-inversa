@@ -29,9 +29,33 @@ a {
   text-decoration: none;
 }
 
+.highlight {
+  background-color: #5DA9AD;
+  color: white;
+}
+
 .header {
   display: flex;
   flex-direction: column;
+}
+.header .login {
+  display: flex;
+  background-color: #376a6d;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.header .login:hover {
+  background-color: #26494b;
+}
+.header .login span {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
 }
 @media (min-width: 740px) {
   .header {
@@ -139,7 +163,7 @@ a {
   margin-top: 40px;
 }
 .block h1, .block h2 {
-  color: #5DA9AD;
+  color: #366365;
   font-weight: 500;
 }
 .block h1 {
@@ -160,7 +184,7 @@ a {
 .block h1::after {
   position: absolute;
   content: "";
-  background-color: #5DA9AD;
+  background-color: #366365;
   height: 5px;
   width: 100%;
   left: 0;
