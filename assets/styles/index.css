@@ -66,7 +66,7 @@ a {
   display: block;
 }
 .header nav {
-  background-color: #548135;
+  background-color: #5DA9AD;
 }
 .header nav ul {
   display: flex;
@@ -90,7 +90,7 @@ a {
   color: white;
 }
 .header nav ul li:hover {
-  background-color: #486f2e;
+  background-color: #519ca0;
 }
 .header nav ul li a {
   font-size: 1.2rem;
@@ -112,14 +112,14 @@ a {
   display: block;
   position: relative;
   cursor: pointer;
-  background-color: #44682d;
+  background-color: #488b8f;
   width: 100%;
 }
 @media (min-width: 740px) {
   .header nav .dropdown-content {
     position: absolute;
     display: none;
-    background-color: #548135;
+    background-color: #5DA9AD;
     padding-left: 0;
   }
 }
@@ -133,13 +133,13 @@ a {
 
 .block {
   position: relative;
-  margin: 120px 0;
+  margin: 0 auto 120px;
 }
 .block:first-child {
   margin-top: 40px;
 }
 .block h1, .block h2 {
-  color: #548135;
+  color: #5DA9AD;
   font-weight: 500;
 }
 .block h1 {
@@ -160,7 +160,7 @@ a {
 .block h1::after {
   position: absolute;
   content: "";
-  background-color: #548135;
+  background-color: #5DA9AD;
   height: 5px;
   width: 100%;
   left: 0;
@@ -192,18 +192,18 @@ a {
 .block button {
   padding: 1rem;
   display: block;
-  margin: 2rem auto;
+  margin: 2rem 0;
   border-radius: 16px;
   border: none;
   font-weight: 600;
   cursor: pointer;
-  background-color: #548135;
+  background-color: #5DA9AD;
   font-size: 1rem;
   color: white;
   width: 240px;
 }
 .block button:hover {
-  background-color: #314b1f;
+  background-color: #407b7e;
 }
 .block article {
   margin: 2rem 0;
@@ -218,7 +218,7 @@ a {
   margin: 2rem auto 0 auto;
 }
 .block .num-list {
-  box-shadow: 0 0 0 2px #548135;
+  box-shadow: 0 0 0 2px #5DA9AD;
   display: flex;
   place-items: center;
   flex-direction: column;
@@ -278,20 +278,69 @@ a {
   text-align: center;
   font-size: 1.5rem;
 }
+.block .grid .card p {
+  text-align: center;
+}
+.block button.center {
+  margin: 0 auto;
+}
 .block h1, .block h2, .block h3, .block h4, .block h5, .block p, .block article {
   display: block;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
+.block .block-with-image {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 700px) {
+  .block .block-with-image {
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.block .block-with-image .img-wrapper {
+  position: relative;
+  max-width: 600px;
+}
+.block .block-with-image .img-wrapper a:hover {
+  transform: scale(1.05);
+}
+.block .block-with-image .img-wrapper a:hover .play-icon {
+  color: red;
+}
+.block .block-with-image .img-wrapper .play-icon {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  width: 50px;
+  cursor: pointer;
+  pointer-events: none;
+}
+.block .block-with-image p {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 700px) {
+  .block .block-with-image p {
+    width: 80%;
+  }
+}
 
 .block.reverse {
-  background-color: #548135;
+  background-color: #488b8f;
   color: white;
   padding: 2rem 1rem;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 4rem auto;
+  margin: 0 auto 120px;
   border-radius: 24px;
 }
 .block.reverse h1 {
@@ -302,12 +351,18 @@ a {
 .block.reverse h1::after {
   background-color: white;
 }
+@media (min-width: 700px) {
+  .block.reverse p {
+    max-width: 700px;
+  }
+}
 .block.reverse button {
   background-color: white;
-  color: #548135;
+  color: #5DA9AD;
+  margin: 0 auto;
 }
 .block.reverse button:hover {
-  background-color: #3e6127;
+  background-color: #4c8a8d;
   color: white;
   box-shadow: 0 0 0 2px white;
 }
@@ -318,19 +373,27 @@ a {
   -moz-column-gap: 4rem;
        column-gap: 4rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 120px;
 }
 .split h1 {
   grid-column: 1/-1;
 }
 @media (min-width: 500px) {
   .split {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+.split article ul li::marker {
+  color: #28494b;
+}
+.split article p {
+  min-height: 110px;
 }
 
 .news {
+  max-width: 1000px;
   display: grid;
+  gap: 2rem;
   grid-template-columns: 1;
   align-items: center;
 }
@@ -338,6 +401,9 @@ a {
   .news {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.news article h1 {
+  font-size: 2rem;
 }
 .news article h1::after {
   content: none;
@@ -353,7 +419,7 @@ a {
 .footer {
   padding: 1.2rem;
   width: 100%;
-  background-color: #548135;
+  background-color: #5DA9AD;
   display: flex;
   flex-direction: column;
   justify-content: center;
