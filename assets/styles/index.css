@@ -57,10 +57,10 @@ a {
      object-fit: cover;
 }
 .header .header-image .logo {
-  width: 200px;
+  width: 350px;
   position: absolute;
   top: 50px;
-  left: 50px;
+  right: 50px;
 }
 .header .header-image .logo a {
   display: block;
@@ -183,7 +183,7 @@ a {
   margin-bottom: 1rem;
 }
 .block ul {
-  list-style: disc;
+  list-style: circle;
 }
 .block li {
   font-size: 1.2rem;
@@ -283,6 +283,7 @@ a {
 }
 .block button.center {
   margin: 0 auto;
+  grid-column: 1/-1;
 }
 .block h1, .block h2, .block h3, .block h4, .block h5, .block p, .block article {
   display: block;
@@ -328,11 +329,6 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-@media (min-width: 700px) {
-  .block .block-with-image p {
-    width: 80%;
-  }
-}
 
 .block.reverse {
   background-color: #488b8f;
@@ -345,8 +341,13 @@ a {
 }
 .block.reverse h1 {
   color: white;
-  width: 70%;
+  width: 100%;
   margin: 0 auto 1rem;
+}
+@media (min-width: 700px) {
+  .block.reverse h1 {
+    width: 70%;
+  }
 }
 .block.reverse h1::after {
   background-color: white;

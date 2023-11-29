@@ -30,6 +30,10 @@ a {
   text-decoration: none;
 }
 
+.highlight {
+  background-color: #5DA9AD;
+  color: white;
+}
 
 .header {
   display: flex;
@@ -58,10 +62,10 @@ a {
     }
 
     .logo {
-      width: 200px;
+      width: 350px;
       position: absolute;
       top: 50px;
-      left: 50px;
+      right: 50px;
 
       a {
         display: block
@@ -201,7 +205,7 @@ a {
   }
   
   ul {
-    list-style: disc;
+    list-style: circle;
   }
 
   li {
@@ -316,6 +320,7 @@ a {
 
   button.center {
     margin: 0 auto;
+    grid-column: 1 / -1;
   }
 
   h1, h2, h3, h4, h5, p, article {
@@ -364,10 +369,6 @@ a {
     p{
       width: 100%;
       margin: 0 auto;
-
-      @media (min-width: 700px) {
-        width: 80%;
-      }
     }
 
   }
@@ -383,8 +384,12 @@ a {
 
   h1 {
     color: white;
-    width: 70%;
+    width: 100%;
     margin: 0 auto 1rem;
+
+    @media (min-width: 700px) { 
+      width: 70%;
+    }
 
     &::after {
       background-color: white;
